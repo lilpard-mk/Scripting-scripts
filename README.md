@@ -14,13 +14,13 @@
 ## 界面截图
 
 ### 设置API Key页面
-![设置API Key的页面截图](img/图1.png)
+<img src="img/图1.png" alt="设置API Key的页面截图" width="70%">
 
 ### 桌面小型组件
-![桌面小型组件的截图](img/图2.png)
+<img src="img/图2.png" alt="桌面小型组件的截图" width="70%">
 
 ### 桌面中型组件
-![桌面中型组件的截图](img/图3.png)
+<img src="img/图3.png" alt="桌面中型组件的截图" width="70%">
 
 ## 项目结构
 
@@ -36,8 +36,13 @@ DeepSeekBalenceChecker/
 
 ## 安装和使用
 
-### 方法一：直接导入 Scripting App
+### 方法一：一键安装（推荐）
 
+点击下方链接即可在 Scripting App 中直接安装此组件：
+
+[安装 DeepSeek 余额检查器](scripting://import_scripts?urls=https://raw.githubusercontent.com/lilpard-mk/Scripting-scripts/refs/heads/main/DeepSeekBalenceChecker/DeepSeek%E4%BD%99%E9%A2%9D.scripting)
+
+或者，你也可以手动导入：
 1. 在 Scripting App 中点击 "导入脚本"
 2. 选择 `DeepSeek余额.scripting` 文件
 3. 脚本将自动导入并显示在脚本列表中
