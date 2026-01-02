@@ -38,14 +38,9 @@ DeepSeekBalenceChecker/
 
 ### 方法一：一键安装（推荐）
 
-点击下方链接即可在 Scripting App 中直接安装此组件（需要在 iOS 设备的 Safari 浏览器中打开）：
+点击下方链接即可在 Scripting App 中直接安装此组件：
 
-[🔗 一键安装 DeepSeek 余额检查器](https://htmlpreview.github.io/?https://github.com/lilpard-mk/Scripting-scripts/blob/main/redirect/deepseek-balance.html)
-
-或者使用重定向服务：
-[📱 通过重定向服务安装](https://intradeus.github.io/http-protocol-redirector?r=scripting%3A%2F%2Fimport_scripts%3Furls%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Flilpard-mk%2FScripting-scripts%2Frefs%2Fheads%2Fmain%2FDeepSeekBalenceChecker%2FDeepSeek%25E4%25BD%2599%25E9%25A2%259D.scripting)
-
-> **注意**：由于 GitHub 的安全策略，无法直接在 README 中使用 `scripting://` 协议链接。上述链接通过第三方重定向服务实现跳转功能。
+[🔗 一键安装 DeepSeek 余额检查器](https://scripting.fun/import_scripts?urls=%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Flilpard-mk%2FScripting-scripts%2Frefs%2Fheads%2Fmain%2FDeepSeekBalenceChecker%2FDeepSeek%25E4%25BD%2599%25E9%25A2%259D.scripting%22%5D)
 
 或者，你也可以手动导入：
 1. 在 Scripting App 中点击 "导入脚本"
