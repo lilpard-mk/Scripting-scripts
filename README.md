@@ -40,7 +40,7 @@ DeepSeekBalenceChecker/
 
 点击下方链接即可在 Scripting App 中直接安装此组件：
 
-[安装 DeepSeek 余额检查器](scripting://import_scripts?urls=https://raw.githubusercontent.com/lilpard-mk/Scripting-scripts/refs/heads/main/DeepSeekBalenceChecker/DeepSeek%E4%BD%99%E9%A2%9D.scripting)
+<a href="scripting://import_scripts?urls=https://raw.githubusercontent.com/lilpard-mk/Scripting-scripts/refs/heads/main/DeepSeekBalenceChecker/DeepSeek%E4%BD%99%E9%A2%9D.scripting">安装 DeepSeek 余额检查器</a>
 
 或者，你也可以手动导入：
 1. 在 Scripting App 中点击 "导入脚本"
