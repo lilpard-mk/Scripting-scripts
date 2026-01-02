@@ -1,0 +1,18 @@
+{
+  "contributors" : [
+
+  ],
+  "localizedNames" : null,
+  "name" : "DeepSeek余额",
+  "color" : "rgba(124, 76, 179,1)",
+  "description" : null,
+  "runInApp" : false,
+  "localizedDescriptions" : null,
+  "icon" : "brain.head.profile",
+  "version" : "1.0.0",
+  "remoteResource" : null,
+  "intentInputTypes" : [
+
+  ],
+  "author" : null
+}
