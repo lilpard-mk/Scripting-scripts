@@ -1,4 +1,4 @@
-import { AppIntentManager, AppIntentProtocol, Widget } from "scripting"
+import { AppIntentManager, AppIntentProtocol, Widget } from "scripting";
 
 /**
  * You can use this intent in Widget like:
@@ -16,8 +16,8 @@ export const MyIntent = AppIntentManager.register({
     /** Modify it to the type you need */
     params: number
   ) => {
-    console.log("Number:", params)
-    
-    Widget.reloadAll()
-  }
-})
+    console.log("Number:", params);
+
+    Widget.reloadAll();
+  },
+});

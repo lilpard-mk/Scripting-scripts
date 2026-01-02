@@ -74,6 +74,13 @@ coverage/
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 
+# Claude Code plugin and skills configuration
+.claude-plugin/
+.claude-plugin/*
+skills/
+templates/
+USAGE.md
+
 # Temporary files
 *.tmp
 *.temp
