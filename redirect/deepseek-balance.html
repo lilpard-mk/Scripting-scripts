@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek 余额检查器安装</title>
+    <script>
+        // 立即重定向到 Scripting App
+        window.location.href = 'scripting://import_scripts?urls=https://raw.githubusercontent.com/lilpard-mk/Scripting-scripts/refs/heads/main/DeepSeekBalenceChecker/DeepSeek%E4%BD%99%E9%A2%9D.scripting';
+
+        // 如果5秒后还未重定向成功，显示备选方案
+        setTimeout(function() {
+            document.getElementById('fallback').style.display = 'block';
+        }, 5000);
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007aff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fallback {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #ff9500;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007aff;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: 500;
+        }
+        .button:hover {
+            background-color: #0056cc;
+        }
+        .button.secondary {
+            background-color: #6c757d;
+        }
+        .button.secondary:hover {
+            background-color: #545b62;
+        }
+        code {
+            background-color: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>正在跳转到 Scripting App...</h1>
+        <p>如果 Scripting App 已安装，页面将自动跳转并开始导入脚本。</p>
+        <p>如果未自动跳转，请确保：</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>已在 iOS 设备上安装 Scripting App</li>
+            <li>正在使用 Safari 浏览器打开此页面</li>
+            <li>已允许 Safari 打开 Scripting App</li>
+        </ul>
+
+        <div id="fallback" class="fallback">
+            <h3>⚠️ 自动跳转失败</h3>
+            <p>如果 Scripting App 未自动打开，请尝试以下方法：</p>
+
+            <h4>方法一：手动点击链接</h4>
+            <p><a href="scripting://import_scripts?urls=https://raw.githubusercontent.com/lilpard-mk/Scripting-scripts/refs/heads/main/DeepSeekBalenceChecker/DeepSeek%E4%BD%99%E9%A2%9D.scripting" class="button">点击此处手动跳转</a></p>
+
+            <h4>方法二：手动下载安装</h4>
+            <ol style="text-align: left; display: inline-block;">
+                <li>下载脚本文件：<br>
+                    <a href="https://raw.githubusercontent.com/lilpard-mk/Scripting-scripts/refs/heads/main/DeepSeekBalenceChecker/DeepSeek%E4%BD%99%E9%A2%9D.scripting" class="button secondary">下载 .scripting 文件</a>
+                </li>
+                <li>在 Scripting App 中点击 "导入脚本"</li>
+                <li>选择下载的 <code>DeepSeek余额.scripting</code> 文件</li>
+            </ol>
+
+            <h4>方法三：源码导入</h4>
+            <ol style="text-align: left; display: inline-block;">
+                <li>访问 <a href="https://github.com/lilpard-mk/Scripting-scripts/tree/main/DeepSeekBalenceChecker">GitHub 仓库</a></li>
+                <li>下载整个 <code>DeepSeekBalenceChecker</code> 文件夹</li>
+                <li>复制到 Scripting App 项目目录中</li>
+            </ol>
+        </div>
+
+        <p style="margin-top: 30px; color: #6c757d; font-size: 0.9em;">
+            此页面由 DeepSeek 余额检查器项目提供<br>
+            如果问题持续，请查看 <a href="https://github.com/lilpard-mk/Scripting-scripts/tree/main/DeepSeekBalenceChecker">项目文档</a>
+        </p>
+    </div>
+</body>
+</html>
