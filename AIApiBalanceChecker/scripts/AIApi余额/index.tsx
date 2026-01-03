@@ -73,11 +73,11 @@ function AIApiList() {
       console.log("未发现需要迁移的数据");
     }
   };
-
+  
   const loadApiStatuses = async () => {
     // 先执行迁移
     await migrateStorage();
-
+    
     const statuses: Record<string, boolean> = {};
 
     for (const api of SUPPORTED_APIS) {
@@ -93,7 +93,6 @@ function AIApiList() {
     setApiStatuses(statuses);
     setLoading(false);
   };
-
   // 加载所有API的密钥状态
   useEffect(() => {
     loadApiStatuses();
@@ -316,7 +315,7 @@ function ApiSettings({ apiId, onSaved }: { apiId: string, onSaved?: () => void }
       const validationError = validateAliyunCredentials();
       if (validationError) {
         setErrorMessage(validationError);
-        setSavedMessage(null);
+        setSavedMessage(null); 
         return;
       }
 
@@ -362,7 +361,7 @@ function ApiSettings({ apiId, onSaved }: { apiId: string, onSaved?: () => void }
       }
 
       try {
-        // 保存到私有存储
+        // 保存到共享存储
         Storage.set(apiConfig.storageKey, key, STORAGE_OPTIONS);
         setSavedMessage(`${apiConfig.name} API 密钥保存成功！`);
         setErrorMessage(null);

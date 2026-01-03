@@ -87,14 +87,6 @@ export function getAllStorageKeys(): string[] {
   return SUPPORTED_APIS.map(api => api.storageKey)
 }
 
-// 设置页面URL方案
-export const SETTINGS_URL_SCHEME = "scripting://run?script=AIApiSettings"
-
-// 默认导出DeepSeek配置（向后兼容）
-export const STORAGE_KEY = DEEPSEEK_API_CONFIG.storageKey
-export const DEEPSEEK_API_URL = DEEPSEEK_API_CONFIG.apiUrl
-export const DEEPSEEK_CONSOLE_URL = DEEPSEEK_API_CONFIG.consoleUrl
-export const LOGO_IMG_BASE64 = DEEPSEEK_API_CONFIG.logoBase64
 
 // 阿里云特定配置
 export const ALIYUN_API_VERSION = '2017-12-14'
