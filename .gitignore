@@ -65,7 +65,6 @@ coverage/
 *.tgz
 
 # Scripting App specific
-*.scripting
 .DocumentRevisions-V100
 .fseventsd
 .Spotlight-V100

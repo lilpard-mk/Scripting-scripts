@@ -63,7 +63,7 @@ export const ALIYUN_API_CONFIG: AIApiConfig = {
   apiUrl: 'https://business.aliyuncs.com', // BSS OpenAPI端点
   consoleUrl: 'https://ram.console.aliyun.com/users',
   logoSvgPath: 'icons/Aliyun.svg',
-  logoHeight: 16,
+  logoHeight: 20,
   logoPadding: 3,
   description: '阿里云AccessKey ID和Secret，用于查询账户余额。在桌面小组件中设置参数值为3显示此API余额。',
 }
