@@ -300,8 +300,8 @@ function ApiSettings({ apiId, onSaved }: { apiId: string, onSaved?: () => void }
     if (!trimmedAccessKeyId.startsWith('LTAI')) {
       return "AccessKey ID 应以 'LTAI' 开头";
     }
-    if (trimmedAccessKeyId.length < 20 || trimmedAccessKeyId.length > 32) {
-      return "AccessKey ID 长度应为20-32个字符";
+    if (trimmedAccessKeyId.length < 16 || trimmedAccessKeyId.length > 32) {
+      return "AccessKey ID 长度应为16-32个字符";
     }
     if (trimmedAccessKeySecret.length < 30 || trimmedAccessKeySecret.length > 40) {
       return "AccessKey Secret 长度应为30-40个字符";
@@ -447,7 +447,7 @@ function ApiSettings({ apiId, onSaved }: { apiId: string, onSaved?: () => void }
           prompt="LTAIxxxxxxxxxxxxxxxxxxxx"
         />
         <Text foregroundStyle="systemGray2" font="caption">
-          请输入您的阿里云 AccessKey ID。通常以 "LTAI" 开头，长度为20-32个字符。
+          请输入您的阿里云 AccessKey ID。通常以 "LTAI" 开头，长度为16-32个字符。
         </Text>
       </Section>
 
