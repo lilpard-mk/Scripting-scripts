@@ -23,6 +23,7 @@ import {
 import {
   SUPPORTED_APIS,
   STORAGE_OPTIONS,
+  OLD_STORAGE_OPTIONS,
   getApiConfig,
   ALIYUN_SUPPORTED_REGIONS,
   ALIYUN_DEFAULT_REGION,
@@ -39,8 +40,44 @@ function AIApiList() {
   const [loading, setLoading] = useState(true);
   const [selectedApiId, setSelectedApiId] = useState<string | null>(null);
 
-  
+  // 自动迁移逻辑：从公共存储转移到私有存储
+  const migrateStorage = async () => {
+    console.log("开始检查存储迁移...");
+    let migratedCount = 0;
+
+    for (const api of SUPPORTED_APIS) {
+      try {
+        // 检查公共存储中是否有数据
+        const oldData = Storage.get<string>(api.storageKey, OLD_STORAGE_OPTIONS);
+        
+        if (oldData) {
+          console.log(`检测到 ${api.name} 的旧存储数据，正在迁移...`);
+          
+          // 写入私有存储
+          Storage.set(api.storageKey, oldData, STORAGE_OPTIONS);
+          
+          // 从公共存储删除
+          Storage.remove(api.storageKey, OLD_STORAGE_OPTIONS);
+          
+          migratedCount++;
+          console.log(`${api.name} 迁移完成`);
+        }
+      } catch (error) {
+        console.error(`迁移 ${api.name} 失败:`, error);
+      }
+    }
+
+    if (migratedCount > 0) {
+      console.log(`共完成 ${migratedCount} 个 API 的存储迁移`);
+    } else {
+      console.log("未发现需要迁移的数据");
+    }
+  };
+
   const loadApiStatuses = async () => {
+    // 先执行迁移
+    await migrateStorage();
+
     const statuses: Record<string, boolean> = {};
 
     for (const api of SUPPORTED_APIS) {
@@ -56,6 +93,7 @@ function AIApiList() {
     setApiStatuses(statuses);
     setLoading(false);
   };
+
   // 加载所有API的密钥状态
   useEffect(() => {
     loadApiStatuses();
@@ -92,7 +130,7 @@ function AIApiList() {
                 },
                 content:
                   selectedApiId != null ? (
-                    <ApiSettings apiId={selectedApiId} />
+                    <ApiSettings apiId={selectedApiId} onSaved={loadApiStatuses} />
                   ) : (
                     <Text>选择API</Text>
                   ),
@@ -161,7 +199,7 @@ function AIApiList() {
 }
 
 // 单个API的设置页面
-function ApiSettings({ apiId }: { apiId: string }) {
+function ApiSettings({ apiId, onSaved }: { apiId: string, onSaved?: () => void }) {
   const apiConfig = getApiConfig(apiId);
 
   if (!apiConfig) {
@@ -302,6 +340,7 @@ function ApiSettings({ apiId }: { apiId: string }) {
           setAccessKeySecret(confirmed.accessKeySecret || '');
           setRegionId(confirmed.regionId || ALIYUN_DEFAULT_REGION);
           setHasSavedKey(true);
+          onSaved?.();
         } catch (error) {
           // 如果读取失败，保留原始值
           setHasSavedKey(true);
@@ -323,7 +362,7 @@ function ApiSettings({ apiId }: { apiId: string }) {
       }
 
       try {
-        // 保存到共享存储
+        // 保存到私有存储
         Storage.set(apiConfig.storageKey, key, STORAGE_OPTIONS);
         setSavedMessage(`${apiConfig.name} API 密钥保存成功！`);
         setErrorMessage(null);
@@ -333,6 +372,7 @@ function ApiSettings({ apiId }: { apiId: string }) {
           const confirmedKey = Storage.get<string>(apiConfig.storageKey, STORAGE_OPTIONS);
           setApiKey(confirmedKey || key);
           setHasSavedKey(true);
+          onSaved?.();
         } catch (error) {
           // 如果读取失败，保留原始密钥在输入框中
           setApiKey(key);
@@ -359,6 +399,7 @@ function ApiSettings({ apiId }: { apiId: string }) {
       setHasSavedKey(false);
       setSavedMessage(`${apiConfig.name} API 密钥已清除`);
       setErrorMessage(null);
+      onSaved?.();
     } catch (error) {
       setErrorMessage(`清除失败：${error instanceof Error ? error.message : "未知错误"}`);
       setSavedMessage(null);

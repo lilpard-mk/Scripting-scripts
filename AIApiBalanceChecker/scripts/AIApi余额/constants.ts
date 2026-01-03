@@ -3,8 +3,10 @@
 
 import { Color } from "scripting"
 
-// 存储选项
-export const STORAGE_OPTIONS = { shared: true }
+// 存储选项 - 迁移到私有存储
+export const STORAGE_OPTIONS = { shared: false }
+// 旧的存储选项 - 用于从公共存储迁移数据
+export const OLD_STORAGE_OPTIONS = { shared: true }
 
 // AI API 类型定义
 export interface AIApiConfig {
